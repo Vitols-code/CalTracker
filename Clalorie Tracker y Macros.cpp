@@ -2,6 +2,7 @@
 //El <iostream proporciona los objetos que pueden leer los datos de entrada y salida del usuario
 #include <iomanip>
 //El <iomanip> es utilizado para gestionar el formato de entrada y salida
+#include <fstream>
 using namespace std;
  
  const int maxFood = 10;
@@ -108,6 +109,31 @@ int main(){
         cout << i + 1 << ". " << foodEntered[i] << " - " << qtyEntered[i] << " gramos" << endl;
         showFood(index, qtyEntered[i]);
         cout<< "\n";
+    }
+ //Le Preguntamos a Chatgpt si era posible lograr que el programa guardara el resumen de los alimentos ingresados
+//las siguientes lineas fueron la contestacion usando la libreria <fstream>
+    ofstream file("alimentos.txt");
+    if (file.is_open()) {
+        file << "Resumen de los alimentos ingresados:\n";
+        for (int i = 0; i < contador; i++) {
+            int index = -1;
+            for (int j = 0; j < maxFood; j++) {
+                if (foodEntered[i] == foodNames[j]) {
+                    index = j;
+                    break;
+                }
+            }
+            file << i + 1 << ". " << foodEntered[i] << " - " << qtyEntered[i] << " gramos\n";
+            file << "Calorias: " << nutrientes[index][0] * qtyEntered[i] / 100 << " kcal\n";
+            file << "Proteinas: " << nutrientes[index][1] * qtyEntered[i] / 100 << " g\n";
+            file << "Carbohidratos: " << nutrientes[index][2] * qtyEntered[i] / 100 << " g\n";
+            file << "Grasas: " << nutrientes[index][3] * qtyEntered[i] / 100 << " g\n\n";
+        }
+        file.close();
+        cout << "Datos guardados en el archivo 'alimentos.txt'.\n";
+    }
+    else {
+        cout << "Error al abrir el archivo para guardar los datos.\n";
     }
 
     return 0;
