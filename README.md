@@ -1,6 +1,8 @@
 En este repositorio estamos desarrollando un programa para ayudar a los usarios a contar las calorias de las comidas que consumen dadas las comidas y su cantidad en gramos.
 
-Como utilizar el programa 1: Seleccion multiple de alimentos. -manzana, pollo, arroz, huevo,pan, platano, leche, tomate, queso, yogur.
+Como utilizar el programa?
+
+1: Seleccion multiple de alimentos. -manzana, pollo, arroz, huevo,pan, platano, leche, tomate, queso, yogur.
 
 2: Ingresar cantidad ingerida en gramos.
 
@@ -10,8 +12,14 @@ Como utilizar el programa 1: Seleccion multiple de alimentos. -manzana, pollo, a
 
 Version History
 
+Version 1.0 
+
+Contiene Loop base.
+
 Version 1.2
 
-Se Agregaron Librerias, Arrays y la Funcion.
+Se Agregaron Librerias, Arrays y Funcion.
 
-Version 1.4
+Version 1.4 
+
+Se implemento el mensaje final dando un resumen de los alimentos ingresados por el usuario.
