@@ -96,17 +96,18 @@ int main(){
 
     } while (opcion == 's');
 
-    
-
-
-
-
-
-
-
-
+    cout << "\nResumen de los alimentos ingresados:\n";
+    for (int i = 0; i < contador; i++) {
+        int index = -1;
+        for (int j = 0; j < maxFood; j++) {
+            if (foodEntered[i] == foodNames[j]) {
+                index = j;
+                break;
+            }
+        }
+        cout << i + 1 << ". " << foodEntered[i] << " - " << qtyEntered[i] << " gramos" << endl;
+        showFood(index, qtyEntered[i]);
+    }
 
     return 0;
 }
-
-
