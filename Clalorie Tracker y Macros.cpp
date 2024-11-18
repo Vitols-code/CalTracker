@@ -107,6 +107,7 @@ int main(){
         }
         cout << i + 1 << ". " << foodEntered[i] << " - " << qtyEntered[i] << " gramos" << endl;
         showFood(index, qtyEntered[i]);
+        cout<< "\n";
     }
 
     return 0;
