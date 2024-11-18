@@ -1,8 +1,42 @@
-// Calorie Tracker y Macros.cpp : This file contains the 'main' function. Program execution begins and ends there.
-//
+#include <iostream>
+//El <iostream proporciona los objetos que pueden leer los datos de entrada y salida del usuario
+#include <iomanip>
+//El <iomanip> es utilizado para gestionar el formato de entrada y salida
+using namespace std;
+ 
+ const int maxFood = 10;
+//El max food  es el maximo de comidas que se pueden poner
+ const int numNutrientes = 4;
+//Los tipos de nutrintes dentro del programa
 
+ //array para lista de alimentos 
+string foodNames[maxFood] = {
+    "manzana", "pollo", "arroz", "huevo", "pan",
+    "platano", "leche", "tomate", "queso", "yogur"
+};
+  //Valores de nutricionales por cada alimento las cuales son 100 gramos
 
-
+  float nutrientes[maxFood] [numNutrientes] = {
+        {52, 0.3, 14, 0.2},
+        {165, 31, 0, 3.6},
+        {130, 2.4, 28, 0.3},
+        {155, 13, 1.1, 11},
+        {265, 9, 49, 3.2},
+        {89, 1.1, 23, 0.3},
+        {42, 3.4, 5, 1},
+        {18, 0.6, 3.9, 0.2},
+        {402, 25, 1.3, 33},
+        {59, 10, 3.6, 0.4}
+    };
+    
+// Funcion para mostrar los valores nutricionales de un alimento dado su indice
+void showFood(int index, float cantidad) {
+    cout << fixed << setprecision(2);
+    cout << "Calorias: " << nutrientes[index][0] * cantidad / 100 << " kcal" << endl;
+    cout << "Proteinas: " << nutrientes[index][1] * cantidad / 100 << " g" << endl;
+    cout << "Carbohidratos: " << nutrientes[index][2] * cantidad / 100 << " g" << endl;
+    cout << "Grasas: " << nutrientes[index][3] * cantidad / 100 << " g" << endl;
+}
 
 
 int main(){
